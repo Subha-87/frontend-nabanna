@@ -22,7 +22,7 @@ const PublicMeeting = () => {
   const getMeetingDetails = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("/api/VIP/fetchAll");
+      const response = await axios.get("/VIP/fetchAll");
       //console.log(response)
       if (response.data.success) {
         setMeetingData(response.data?.data);
