@@ -267,10 +267,10 @@ const DashBoard = () => {
       setError(null);
       try {
         const [c, r, e, inc] = await Promise.all([
-          axios.get("/api/complain/getAll"),
-          axios.get("/api/ItReq/allITData"),
-          axios.get("/api/estimateReg"),
-          axios.get("/api/itemNabanna/showincoming"),
+          axios.get("/complain/getAll"),
+          axios.get("/ItReq/allITData"),
+          axios.get("/estimateReg"),
+          axios.get("/itemNabanna/showincoming"),
         ]);
         setComplains(safe(c.data?.data));
         setRequisitions(safe(r.data?.data));

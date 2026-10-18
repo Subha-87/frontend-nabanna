@@ -12,7 +12,7 @@ const Dashboard = () => {
   const getDashboardDetails = async () => {
     try {
       setLoading();
-      const resp = await axios.get("/api/NabannaSystem/dashboard-summary");
+      const resp = await axios.get("/NabannaSystem/dashboard-summary");
       console.log(resp.data);
       setdashboardData(resp.data?.data);
     } catch (error) {

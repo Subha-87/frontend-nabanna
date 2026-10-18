@@ -22,7 +22,7 @@ const Complain = ({ setData }) => {
     const setDomain = "Internet";
     try {
       const response = await axios.get(
-        //"http://10.10.119.160:5000/complain/getNetAll"
+        
         `/complain/getComplainIT/${setDomain}`,
       );
       //console.log(response);

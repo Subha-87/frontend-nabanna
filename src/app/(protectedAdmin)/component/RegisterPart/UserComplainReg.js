@@ -16,7 +16,7 @@ const UserComplainReg = ({setData}) => {
     try {
       const response = await axios.get(
        
-        "/api/complain/getAll",
+        "/complain/getAll",
       );
       //console.log(response);
       setData(response.data?.data)

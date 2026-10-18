@@ -20,7 +20,7 @@ const NoAmc = () => {
     //setIsLoading(true);
     
     try {
-      const response = await axios.get("/api/NabannaSystem/get-repair");
+      const response = await axios.get("/NabannaSystem/get-repair");
       //console.log(response);
       if (response.data.success) {
         setRepairData(response.data.data);

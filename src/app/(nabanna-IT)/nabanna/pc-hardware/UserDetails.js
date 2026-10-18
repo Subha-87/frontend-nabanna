@@ -18,7 +18,7 @@ const UserDetails = () => {
 
   const getHardwareData = async () => {
     try {
-      const resp = await axios.get("/api/NabannaSystem");
+      const resp = await axios.get("/NabannaSystem");
       //console.log(resp.data);
       setRows(resp.data?.data);
     } catch (error) {

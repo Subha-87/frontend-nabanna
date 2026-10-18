@@ -20,7 +20,7 @@ const UserComplain = () => {
   const getComplainData = async () => {
     const setDomain = "PC_Hardware";
     try {
-      const response = await axios.get(`/api/complain/getComplainIT/${setDomain}`);
+      const response = await axios.get(`/complain/getComplainIT/${setDomain}`);
       //console.log(response);
       setComplainPcData(response.data?.data);
     } catch (err) {

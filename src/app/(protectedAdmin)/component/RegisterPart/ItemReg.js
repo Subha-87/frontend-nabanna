@@ -19,7 +19,7 @@ const ItemReg = () => {
   const getItItemsData = async () => {
     //console.log(axios)
     try {
-      const response = await axios.get("/api/itemNabanna/showincoming");
+      const response = await axios.get("/itemNabanna/showincoming");
       setItItemData(response.data?.data);
     } catch (error) {
       //console.error(error);

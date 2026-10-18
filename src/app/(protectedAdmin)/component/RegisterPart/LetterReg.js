@@ -26,7 +26,7 @@ const LetterReg = ({setData}) => {
 
   const getReqData = async () => {
     try {
-      const response = await axios.get("/api/ItReq/allITData");
+      const response = await axios.get("/ItReq/allITData");
       //console.log(response);
       setData(response.data?.data) // for badge//
       setRequsitionData(response.data?.data);
