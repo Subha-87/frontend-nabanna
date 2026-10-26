@@ -115,7 +115,7 @@ export default function ContactForm() {
 
      try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/public/contact`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/public/contact`,
         payload,
         {
           headers: {
