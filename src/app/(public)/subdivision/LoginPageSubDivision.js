@@ -5,7 +5,7 @@ import NabannaImg from "../../../../public/SlideImage/Nabanna_(নবান্�
 import WritersImg from "../../../../public/SlideImage/writers-building-kolkata-tourism-entry-fee-timings-holidays-reviews-header.jpg";
 import AliporeImg from "../../../../public/SlideImage/1681456745_dhono.jpg";
 import LoginContainer from "./LoginContainer";
-import GovtLogo from "../../../../public/LogoImage/ChatGPT Image May 12, 2026, 05_06_07 PM.png";
+//import GovtLogo from "../../../../public/LogoImage/ChatGPT Image May 12, 2026, 05_06_07 PM.png";
 import { Suspense } from "react";
 import "./mainShow.css";
 
@@ -44,10 +44,11 @@ const LoginPageSubDivision = ({ subdivision }) => {
       >
         <div className="flex justify-center items-center">
           <Image
-            src={GovtLogo}
+            src="/LogoImage/ChatGPT%20Image%20May%2012%2C%202026%2C%2005_06_07%20PM.png"
             alt="Ashok Stambh"
             height={100}
             width={90}
+            unoptimized
             style={{ marginBottom: -35 }}
           />
         </div>

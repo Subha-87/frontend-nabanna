@@ -3,7 +3,7 @@ import Image from "next/image";
 //import coverImg from "../../../../public/LoginImage/abstract_low_poly_techno_design_background_1905.jpg";
 import coverImg from "../../../../public/LoginImage/Cross-platform development in action.png"
 
-import AshokStamva from "../../../../public/LogoImage/ChatGPT Image May 12, 2026, 05_06_07 PM.png"
+//import AshokStamva from "../../../../public/LogoImage/ChatGPT Image May 12, 2026, 05_06_07 PM.png"
 import { Suspense } from "react";
 import AdminLogin from "./AdminLogin";
 import loginStyle from "./page.module.css";
