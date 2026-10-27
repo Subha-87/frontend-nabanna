@@ -22,10 +22,11 @@ export default async function Page() {
           {/* Logo */}
           <div className={loginStyle.loginLogo}>
             <Image
-              src={AshokStamva}
+              src="/LogoImage/ChatGPT%20Image%20May%2012%2C%202026%2C%2005_06_07%20PM.png"
               alt="Govt Logo"
               height={100}
               width={90}
+              unoptimized
               style={{marginBottom:-35}}
             />
           </div>
