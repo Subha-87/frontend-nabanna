@@ -19,7 +19,7 @@ const PCreport = () => {
     const setDomain = "PC_Hardware";
     try {
       const response = await axios.get(
-        `/api/complain/getSolvedITComplain/${setDomain}`,
+        `/complain/getSolvedITComplain/${setDomain}`,
       );
       //console.log(response);
       setResolvedData(response.data?.data);
