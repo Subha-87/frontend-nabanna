@@ -99,7 +99,7 @@ export const NabannaEstimateTable = () => {
                       height={60}
                       alt="Estimate Copy"
                       //src = {`http://10.10.119.160:5000${data.est_copy_url}`}
-                      src={`http://10.10.119.160/api${data.est_copy_url}`}
+                      src={`https://nabanna-itpwd.online/api${data.est_copy_url}`}
                       //onClick={() => openInNewTab(`http://10.10.119.160:5000${data.est_copy_url}`)}
                       onClick={() => openInNewTab(`/api${data.est_copy_url}`)}
                     />
@@ -128,7 +128,7 @@ export const NabannaEstimateTable = () => {
                       height={60}
                       alt="Requistion Copy"
                       //src = {`http://10.10.119.160:5000${data.req_letter_url}`}
-                      src={`http://10.10.119.160/api${data.req_letter_url}`}
+                      src={`https://nabanna-itpwd.online/api${data.req_letter_url}`}
                       onClick={() => openInNewTab(`/api${data.req_letter_url}`)}
                     />
                   ) : (
@@ -144,7 +144,7 @@ export const NabannaEstimateTable = () => {
                         height={60}
                         alt="Approval Copy"
                         //src = {`http://10.10.119.160:5000${data.apprv_copy_url}`}
-                        src={`http://10.10.119.160/api${data.apprv_copy_url}`}
+                        src={`https://nabanna-itpwd.online/api${data.apprv_copy_url}`}
                         onClick={() =>
                           openInNewTab(`/api${data.apprv_copy_url}`)
                         }
@@ -244,7 +244,7 @@ export const SearchEstmateNabannaTable = ({ searchResult, error}) => {
                       width={100}
                       height={60}
                       alt="Estimate Copy"
-                      src={`http://10.10.119.160/api${data.est_copy_url}`}
+                      src={`https://nabanna-itpwd.online/api${data.est_copy_url}`}
                       onClick={() => openInNewTab(`/api${data.est_copy_url}`)}
                     />
                   ) : (
@@ -271,7 +271,7 @@ export const SearchEstmateNabannaTable = ({ searchResult, error}) => {
                       width={100}
                       height={60}
                       alt="Requistion Copy"
-                      src={`http://10.10.119.160/api${data.req_letter_url}`}
+                      src={`https://nabanna-itpwd.online/api${data.req_letter_url}`}
                       onClick={() => openInNewTab(`/api${data.req_letter_url}`)}
                     />
                   ) : (

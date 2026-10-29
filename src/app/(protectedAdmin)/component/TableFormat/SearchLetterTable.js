@@ -44,10 +44,10 @@ const SearchLetterTable = ({ result }) => {
                   width={200}
                   height={100}
                   alt="Requsition Letter"
-                  src={`http://10.10.119.160:5000/ItReq/letter_pic/${data._id}`}
+                  src={`https://nabanna-itpwd.online/api/ItReq/letter_pic/${data._id}`}
                   onClick={() =>
                     openInNewTab(
-                      "http://10.10.119.160:5000/ItReq/letter_pic/" + data._id,
+                      "https://nabanna-itpwd.online/api/ItReq/letter_pic/" + data._id,
                     )
                   }
                 />

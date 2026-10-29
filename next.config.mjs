@@ -9,11 +9,12 @@ const nextConfig = {
         pathname: "/ItReq/**", // specify a path pattern
       },
       {
-        protocol: "http",
-        hostname: "10.10.119.160", // Replace with the hostname of your image server
+        protocol: "https",
+        hostname: "nabanna-itpwd.online", // Replace with the hostname of your image server
 
         pathname: "/api/ItReq/**", // specify a path pattern
       },
+
       {
         protocol: "http",
         hostname: "10.10.119.160",
@@ -21,8 +22,9 @@ const nextConfig = {
         pathname: "/EstimateFolder/**",
       },
       {
-        protocol: "http",
-        hostname: "10.10.119.160",
+        protocol: "https",
+        hostname: "nabanna-itpwd.online",
+
         pathname: "/api/EstimateFolder/**",
       },
       {
@@ -32,8 +34,9 @@ const nextConfig = {
         pathname: "/RequisitionFolder/**",
       },
       {
-        protocol: "http",
-        hostname: "10.10.119.160",
+        protocol: "https",
+        hostname: "nabanna-itpwd.online",
+
         pathname: "/api/RequisitionFolder/**",
       },
       {
@@ -43,8 +46,9 @@ const nextConfig = {
         pathname: "/ApprovalFolder/**",
       },
       {
-        protocol: "http",
-        hostname: "10.10.119.160",
+        protocol: "https",
+        hostname: "nabanna-itpwd.online",
+
         pathname: "/api/ApprovalFolder/**",
       },
       {
@@ -53,14 +57,20 @@ const nextConfig = {
         pathname: "/api/WorkOrderFolder/**",
       },
       {
+        protocol: "https",
+        hostname: "nabanna-itpwd.online",
+        pathname: "/api/WorkOrderFolder/**",
+      },
+
+      {
         protocol: "http",
         hostname: "10.10.119.160",
         port: "5000",
         pathname: "uploads/images/Meetings/**",
       },
       {
-        protocol: "http",
-        hostname: "10.10.119.160",
+        protocol: "https",
+        hostname: "nabanna-itpwd.online",
 
         pathname: "/api/uploads/images/Meetings/**",
       },

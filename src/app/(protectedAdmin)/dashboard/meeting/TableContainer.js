@@ -84,7 +84,7 @@ const TableContainer = ({ tableData, tableError, isLoading, onRefresh }) => {
                   width={100}
                   height={60}
                   alt="Requsition Letter"
-                  src={`http://10.10.119.160/api/uploads/images/Meetings/${row.letter.filename}`}
+                  src={`https://nabanna-itpwd.online/api/uploads/images/Meetings/${row.letter.filename}`}
                   onClick={() =>
                     openInNewTab(
                       `/api/uploads/images/Meetings/${row.letter.filename}`,
