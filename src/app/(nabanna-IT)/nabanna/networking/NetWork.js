@@ -92,7 +92,7 @@ const NetWork = ({ setData }) => {
                       )}
 
                       <Image
-                        src={`http://10.10.119.160/api/ItReq/letter_pic/${data._id}`}
+                        src={`https://nabanna-itpwd.online/api/ItReq/letter_pic/${data._id}`}
                         alt="letter img"
                         className="showImg"
                         width={100}

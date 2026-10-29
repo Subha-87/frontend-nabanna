@@ -81,7 +81,7 @@ const ReqVoice = () => {
                         height={60}
                         alt="Requsition Letter"
                         //src={`http://10.10.119.160:5000/ItReq/letter_pic/${data._id}`}
-                        src={`http://10.10.119.160/api/ItReq/letter_pic/${data._id}`}
+                        src={`https://nabanna-itpwd.online/api/ItReq/letter_pic/${data._id}`}
                         onClick={() =>
                           openInNewTab("/api/ItReq/letter_pic/" + data._id)
                         }
