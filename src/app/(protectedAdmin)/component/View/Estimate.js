@@ -345,6 +345,7 @@ export const Challan_Estimate = ({ id }) => {
     setLoading(true);
     try {
       const res = await axios.get(`/estimateReg/view/${id}`);
+      console.log(res)
       setImages(res.data.challan_img || []);
       setOrderImage(res.data.order_img || "");
       setWork_order_no(res.data.order_no);
