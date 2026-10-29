@@ -197,11 +197,63 @@ export const DeleteBtn = ({ delId, onRefresh }) => {
 // PDF HEADER — customize later
 const addPdfHeader = (doc, selectedMonth, year) => {
   // Add department name, logo, report title, etc. here.
+  const pageWidth = doc.internal.pageSize.getWidth();
+
+  // Main heading
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(16);
+  doc.setTextColor(21, 101, 192);
+
+  doc.text("VIP Meeting Details In Nabanna", pageWidth / 2, 10, {
+    align: "center",
+  });
+
+  // Selected month
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.setTextColor(50, 50, 50);
+
+  doc.text(`Month: ${selectedMonth} ${year}`, pageWidth / 2, 16, {
+    align: "center",
+  });
+
+  // Separator line
+  doc.setDrawColor(180, 180, 180);
+  doc.setLineWidth(0.3);
+  doc.line(10, 18, pageWidth - 10, 18);
 };
 
 // PDF FOOTER — customize later
 const addPdfFooter = (doc, pageNumber, totalPages) => {
   // Add signatures, page numbers, approval details, etc. here.
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+
+  // Signature section
+  const signatureY = pageHeight - 10;
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.setTextColor(40, 40, 40);
+
+  // Left side: Agency Signature
+  doc.text("Agency Signature: __________________", 10, signatureY);
+
+  // Right side: PWD Signature
+  doc.text("PWD Signature: __________________", pageWidth - 10, signatureY, {
+    align: "right",
+  });
+
+  // Page number
+  doc.setFontSize(8);
+  doc.setTextColor(100, 100, 100);
+
+  doc.text(
+    `Page ${pageNumber} of ${totalPages}`,
+    pageWidth / 2,
+    pageHeight - 4,
+    { align: "center" },
+  );
 };
 
 export const PDFBtn = ({ meetingData = [] }) => {
@@ -311,10 +363,10 @@ export const PDFBtn = ({ meetingData = [] }) => {
     });
 
     autoTable(doc, {
-      startY: 20,
+      startY: 22,
       margin: {
-        top: 20,
-        bottom: 15,
+        top: 22,
+        bottom: 20,
         left: 10,
         right: 10,
       },
