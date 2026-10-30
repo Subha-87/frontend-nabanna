@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 // Import images
 import GovtLogo from "../../../public/IT PERSONNEL IMAGE/Emblem_of_West_Bengal_(2018-present).svg.png";
-import GroupPic from "../../../public/IT PERSONNEL IMAGE/Cover.jpg";
+import GroupPic from "../../../public/IT PERSONNEL IMAGE/Cover_Updated.jpg";
 import Logo from "../../../public/LogoImage/02631e9d74234d5fb9e91722f92fc519-free.png";
 import Susipra from "../../../public/IT PERSONNEL IMAGE/Susipra.jpg";
 import joydeep from "../../../public/IT PERSONNEL IMAGE/NETWORK TEAM/joydeep.jpg";
@@ -54,7 +54,7 @@ const teamData = [
     members: [
       { name: "Suman Sarder", pic: suman },
       { name: "Debasish Halder", pic: debasish },
-      { name: "Rittik Kurmar Dey", pic: rittik },
+     
       { name: "Rajdeep Saha", pic: rajdip },
       { name: "Biplab Majumder", pic: biplab },
     ],
@@ -91,7 +91,7 @@ const teamData = [
       { name: "Somnath Panda", pic: Somnath },
       { name: "Sanjib Rakhshit", pic: Sanjib },
       { name: "Priyanka Halder", pic: Priyanka },
-      { name: "Sumana Roy", pic: Sumana },
+   
     ],
   },
 ];

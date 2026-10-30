@@ -69,7 +69,7 @@ const ComplainForm = ({ modStat, onSuccess }) => {
     username: Yup.string().required("Name is required!"),
     designation: Yup.string().required("Rank is required!"),
     department: Yup.string().required("Select Any Department!"),
-    room: Yup.string().required("Room No is required!"),
+    //room: Yup.string().required("Room No is required!"),
     contact: Yup.string().required("Contact is required!"),
   });
 
@@ -191,7 +191,7 @@ const ComplainForm = ({ modStat, onSuccess }) => {
 
               <Grid item xs={12} sm={6}>
                 <SectionLabel icon={<RoomIcon sx={{ fontSize: 16 }} />} text="Room No" required />
-                <TextField fullWidth size="small" name="room" label="Enter Room Number" value={values.room} onChange={handleChange} onBlur={handleBlur} error={touched.room && Boolean(errors.room)} helperText={touched.room && errors.room ? errors.room : " "} sx={inputSx(touched.room && errors.room)} />
+                <TextField fullWidth size="small" name="room" label="Enter Room Number" value={values.room} onChange={handleChange} onBlur={handleBlur}  />
               </Grid>
 
               {/* Contact Row */}
