@@ -1,6 +1,6 @@
 
 
-import "./globals.css";
+import "./global.css";
 import styles from "./layout.module.css";
 import SideBar from "@/component/SideBarAdmin";
 
@@ -16,6 +16,7 @@ import SessionWatcher from "./SessionWatcher";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AccessibilityProvider } from "@/context/AccessibilityContext";
 
 export default async function AdminLayout({ children }) {
   const s_id = await getSession(); // get valid session id  by request header set in middleware//
@@ -38,6 +39,8 @@ export default async function AdminLayout({ children }) {
         <AuthProvider authInfo={validAuthInfo}>
           <AxiosProvider>
             <SessionWatcher expiry={validAuthInfo.expiry} />
+           <AccessibilityProvider>
+
             <div className={styles.header}>
               <Navbar />
             </div>
@@ -57,6 +60,7 @@ export default async function AdminLayout({ children }) {
               />
             </div>
             <div className={styles.sidebar}>{<SideBar />}</div>
+           </AccessibilityProvider>
           </AxiosProvider>
         </AuthProvider>
       </body>

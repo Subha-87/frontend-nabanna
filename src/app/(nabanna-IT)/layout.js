@@ -14,6 +14,7 @@ import AxiosProvider from "../Provider/AxiosProvider";
 import { redirect } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import SessionWatcher_ITUser from "./SessionWatcher_ITUser";
+import { AccessibilityProvider } from "@/context/AccessibilityContext";
 
 export default async function NabannaLayout({ children }) {
   const s_id = await getSession(); // get valid session id  by header//
@@ -35,6 +36,8 @@ export default async function NabannaLayout({ children }) {
       <body className={styles.body}>
         <AuthProvider authInfo={validAuthInfo}>
           <AxiosProvider>
+            <AccessibilityProvider>
+
             <div className={styles.mainLayout}>
               <SessionWatcher_ITUser expiry={validAuthInfo.expiry} />
               <div className={styles.header}>
@@ -58,6 +61,7 @@ export default async function NabannaLayout({ children }) {
                 <Footer />
               </div>
             </div>
+            </AccessibilityProvider>
           </AxiosProvider>
         </AuthProvider>
       </body>

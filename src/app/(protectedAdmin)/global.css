@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+
+
+:root {
+  --app-font-size: 16px;
+}
+
+html {
+  font-size: var(--app-font-size);
+}
+
+body {
+  font-size: 1rem;
+}
+
+/* ================================
+   AVATAR
+================================ */
+
 .avatar-wrapper {
   position: relative;
   width: 60px;
@@ -25,16 +43,24 @@
   border: 2px solid #0f172a;
 }
 
+/* ================================
+   USER INFORMATION
+================================ */
+
 .user-name {
   color: white;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .user-rank {
   color: #8cf32b;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
+
+/* ================================
+   SEARCH INPUT
+================================ */
 
 .searchInput {
   width: 250px;
@@ -42,8 +68,10 @@
   padding: 10px 14px;
   border-radius: 10px;
   border: 2px solid #321796;
-  font-size: 15px;
+
+  font-size: 0.9375rem;
   font-weight: 500;
+
   color: #1e3a8a;
   background-color: rgb(255, 253, 194);
   transition: all 0.25s ease;
@@ -60,9 +88,17 @@
   box-shadow: 0 0 6px rgba(69, 6, 147, 0.4);
 }
 
+/* ================================
+   BUTTON HOVER
+================================ */
+
 button:hover {
   transform: scale(1.1);
 }
+
+/* ================================
+   SIDEBAR COLLAPSED
+================================ */
 
 :global(.collapsed) .mainLayout {
   --sidebar-width: 70px;
@@ -76,13 +112,56 @@ button:hover {
   justify-content: center;
 }
 
+/* ================================
+   MODAL ANIMATION
+================================ */
+
 @keyframes modalFadeIn {
   from {
     opacity: 0;
     transform: translate(-50%, -48%) scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
+}
+
+
+/* =====================================
+   GLOBAL BOOTSTRAP TABLE FONT SCALING
+===================================== */
+
+.table {
+  font-size: 0.875rem;
+}
+
+/* Table header */
+.table thead th {
+  font-size: 0.875rem;
+}
+
+/* Table body cells */
+.table tbody td {
+  font-size: 0.875rem;
+}
+
+/* Table footer */
+.table tfoot th,
+.table tfoot td {
+  font-size: 0.875rem;
+}
+
+/* Bootstrap table inputs */
+.table input,
+.table select,
+.table textarea,
+.table button {
+  font-size: inherit;
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+  font-size: 0.875rem;
 }

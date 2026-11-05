@@ -10,6 +10,7 @@ import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import MemoryIcon from '@mui/icons-material/Memory';
+import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import "./NavBar.css";
 
 export default function COMPONENT_NAVBAR() {
@@ -27,7 +28,7 @@ export default function COMPONENT_NAVBAR() {
    return (
     <Container className="navContainer" fluid>
       {/* Added g-0 to remove Bootstrap's default gutter margins */}
-      <Row className="navRow g-0">
+      <Row className="navRow g-0 align-items-center">
         {navLinks.map(({ href, label, icon: Icon }) => (
           <Col key={href} className="navCol" xs="auto"> {/* xs="auto" prevents cols from squishing awkwardly */}
             <Link
@@ -39,25 +40,15 @@ export default function COMPONENT_NAVBAR() {
             </Link>
           </Col>
         ))}
+          {/* Accessibility Toolbar - Extreme Right */}
+      <Col xs="auto" className="ms-auto">
+        <AccessibilityToolbar />
+      </Col>
+
       </Row>
+        
     </Container>
   );
 
-  /*return (
-    <Container className="navContainer">
-      <Row className="navRow">
-        {navLinks.map(({ href, label, icon: Icon }) => (
-          <Col key={href} className="navCol">
-            <Link
-              href={href}
-              className={`navItem ${pathname === href ? "navActive" : ""}`}
-            >
-              <Icon className="navIcon" />
-              {label}
-            </Link>
-          </Col>
-        ))}
-      </Row>
-    </Container>
-  );*/
+
 }

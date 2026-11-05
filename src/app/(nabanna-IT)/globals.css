@@ -1,126 +1,139 @@
 @import "tailwindcss";
 
-.avatar-wrapper{
-  position:relative;
-  width:60px;
-  height:60px;
+/* ================================
+   GLOBAL FONT SCALING
+================================ */
+
+:root {
+  --app-font-size: 16px;
 }
 
-.avatar-img{
+html {
+  font-size: var(--app-font-size);
+}
+
+/* ================================
+   AVATAR
+================================ */
+
+.avatar-wrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.avatar-img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow:0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-.online-dot{
-  position:absolute;
-  bottom:4px;
-  right:4px;
-  width:14px;
-  height:14px;
-  background:#22c55e;
-  border-radius:50%;
-  border:2px solid #0f172a;
+.online-dot {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 14px;
+  height: 14px;
+  background: #22c55e;
+  border-radius: 50%;
+  border: 2px solid #0f172a;
 }
 
-.user-name{
-  color:white;
-  font-weight:600;
-  font-size:18px;
+.user-name {
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
 }
 
-.user-rank{
-  color:#8cf32b;
-  font-size:13px;
+.user-rank {
+  color: #8cf32b;
+  font-size: 0.8125rem;
 }
 
-/* FOOTER CSS */
+/* ================================
+   FOOTER
+================================ */
 
-.footer{
-  width:100%;
-  background:#1e293b;
-  color:#cbd5f5;
+.footer {
+  width: 100%;
+  background: #1e293b;
+  color: #cbd5f5;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border-top:1px solid #334155;
+  border-top: 1px solid #334155;
 
-  padding:10px 0;
-  font-family:sans-serif;
+  padding: 10px 0;
+  font-family: sans-serif;
 
   transition: background 0.3s ease;
 }
 
-/* container */
+.footer-content {
+  width: 95%;
+  max-width: 1400px;
 
-.footer-content{
-  width:95%;
-  max-width:1400px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 
-  display:flex;
-  justify-content:space-evenly;
-  align-items:center;
-
-  font-size:14px;
-  letter-spacing:0.3px;
-  font-family:sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.3px;
+  font-family: sans-serif;
 
   transition: background 0.3s ease;
 }
 
-/* left section */
+.footer-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 
-.footer-text{
-  display:flex;
-  align-items:center;
-  gap:6px;
-
-  font-weight:500;
+  font-weight: 500;
 }
 
-/* icon */
-
-.footer-icon{
-  font-size:14px;
-  opacity:0.9;
+.footer-icon {
+  font-size: 0.875rem;
+  opacity: 0.9;
 }
 
-/* right section */
-
-.footer-right{
-  opacity:0.75;
-  font-weight:400;
+.footer-right {
+  opacity: 0.75;
+  font-weight: 400;
 
   transition: opacity 0.25s ease;
 }
 
-/* subtle hover effect */
-
-.footer-right:hover{
-  opacity:1;
+.footer-right:hover {
+  opacity: 1;
 }
 
+/* ================================
+   SEARCH INPUT
+================================ */
+
 .searchInput {
- 
   height: 45px;
   padding: 10px 14px;
   border-radius: 10px;
   border: 2px solid #321796;
-  font-size: 15px;
+
+  font-size: 0.9375rem;
   font-weight: 500;
+
   color: #1e3a8a;
   background-color: rgb(255, 253, 194);
+
   transition: all 0.25s ease;
 }
 
 .searchInput::placeholder {
   color: #0a26b4;
   font-weight: 400;
-  
 }
 
 .searchInput:focus {
@@ -129,19 +142,26 @@
   box-shadow: 0 0 6px rgba(69, 6, 147, 0.4);
 }
 
+/* ================================
+   MODAL ANIMATION
+================================ */
 
-  @keyframes modalFadeIn {
-    from {
-      opacity: 0;
-      transform: translate(-50%, -48%) scale(0.96);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
   }
 
-  /* Force MUI to win over Bootstrap */
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ================================
+   MATERIAL UI
+================================ */
+
 .MuiOutlinedInput-root {
   border-radius: 10px !important;
 }
@@ -169,10 +189,50 @@
   font-family: 'Inter', sans-serif !important;
 }
 
-/* Kill Bootstrap form resets inside modal */
+/* ================================
+   BOOTSTRAP MODAL
+================================ */
+
 .modal .form-control,
 .modal .form-select {
   border: none !important;
   padding: 0 !important;
   border-radius: 0 !important;
+}
+
+/* =====================================
+   GLOBAL BOOTSTRAP TABLE FONT SCALING
+===================================== */
+
+.table {
+  font-size: 0.875rem;
+}
+
+/* Table header */
+.table thead th {
+  font-size: 0.875rem;
+}
+
+/* Table body cells */
+.table tbody td {
+  font-size: 0.875rem;
+}
+
+/* Table footer */
+.table tfoot th,
+.table tfoot td {
+  font-size: 0.875rem;
+}
+
+/* Bootstrap table inputs */
+.table input,
+.table select,
+.table textarea,
+.table button {
+  font-size: inherit;
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+  font-size: 0.875rem;
 }

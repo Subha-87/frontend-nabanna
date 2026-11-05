@@ -7,12 +7,16 @@
 
 /* Align navbar items */
 .navRow {
-  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly; /* Centers the navigation items */
-  gap: 15px; /* Space between items */
-  flex-wrap: nowrap;
+  
+  width: 100%;
+  justify-content: space-evenly;
+  height: 100%;
+  gap: 17px;
+}
+
+.navCol:last-child {
+  flex-shrink: 0;
 }
 
 /* Column center - adjusting to fit content rather than stretching */

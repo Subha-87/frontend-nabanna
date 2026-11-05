@@ -6,6 +6,7 @@ import { useAuth } from "@/app/Hook/useAuth";
 import Image from "next/image";
 import userIcon from "../../../../public/userImage/man-user-circle-icon.png";
 import SidebarToggle from "@/component/SidebarToggle";
+import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 
 export default function COMPONENT_NAVBAR() {
   //console.log(useAuth())
@@ -32,6 +33,9 @@ export default function COMPONENT_NAVBAR() {
       {/* Right section */}
       <div>
         <LogoutBtn />
+      </div>
+      <div>
+        <AccessibilityToolbar/>
       </div>
     </>
   );

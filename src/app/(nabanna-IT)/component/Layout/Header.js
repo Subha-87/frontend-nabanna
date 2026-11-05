@@ -6,6 +6,7 @@ import { useAuth } from "@/app/Hook/useAuth";
 import Image from "next/image";
 import useIcon from "../../../../../public/userImage/man-user-circle-icon.png";
 import OfficalLogo from "../.././../../../public/LogoImage/02631e9d74234d5fb9e91722f92fc519-free.png";
+import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 
 const Header = () => {
   //const{username,rank} = authUser
@@ -36,6 +37,9 @@ const Header = () => {
           <div className="user-name">Welcome {authName}</div>
           <div className="user-rank">{authRank}</div>
         </div>
+      </div>
+      <div>
+         <AccessibilityToolbar />
       </div>
 
       {/* Right section */}
