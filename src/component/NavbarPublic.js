@@ -19,7 +19,7 @@ export default function COMPONENT_NAVBAR() {
   const navLinks = [
     { href: "/", label: "Home", icon: HomeIcon },
     { href: "/about", label: "About", icon: InfoIcon },
-    { href: "/aiAssistant", label: "AI Assistant", icon: MemoryIcon },
+    //{ href: "/aiAssistant", label: "AI Assistant", icon: MemoryIcon }, later add if llm works
     { href: "/admin", label: "Admin", icon: AdminPanelSettingsIcon },
     { href: "/subdivision", label: "Sub-Division", icon: AccountTreeIcon },
     { href: "/contact", label: "Contact", icon: ContactMailIcon },

@@ -350,25 +350,7 @@ export default function ContactForm() {
               </div>
             </div>
 
-            {/* CAPTCHA placeholder */}
-            <div className="bg-slate-50 border border-dashed border-slate-300 rounded-lg p-4 text-center">
-              <p className="text-xs text-slate-500">
-                <svg
-                  className="w-4 h-4 inline-block mr-1 text-slate-400 -mt-0.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 013 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
-                  />
-                </svg>
-                CAPTCHA verification will appear here
-              </p>
-            </div>
+            
 
             {/* Success / Error message */}
             {submitMessage.text && (
