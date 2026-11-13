@@ -109,7 +109,7 @@ const TableContainer = ({ tableData, tableError, isLoading, onRefresh }) => {
 
             {/* Time */}
             <td className="border border-gray-200 px-4 py-3">
-              {row.meetingTime}
+              <strong>{formatMeetingTime(row.meetingTime)}</strong> 
             </td>
 
             {/* Agency */}
@@ -139,3 +139,17 @@ const TableContainer = ({ tableData, tableError, isLoading, onRefresh }) => {
 };
 
 export default TableContainer;
+
+
+export const formatMeetingTime = (time) => {
+  if (!time) return "N/A";
+
+  const [hours, minutes] = time.split(":");
+
+  const hour = Number(hours);
+  const period = hour >= 12 ? "PM" : "AM";
+
+  const formattedHour = hour % 12 || 12;
+
+  return `${formattedHour}:${minutes} ${period}`;
+};
