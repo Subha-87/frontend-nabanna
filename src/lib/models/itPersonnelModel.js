@@ -1,5 +1,6 @@
-const { Schema, model, default: mongoose } = require("mongoose"); // Erase if already required
-
+//const { Schema, model, default: mongoose } = require("mongoose"); // Erase if already required
+import { Schema, model, mongoose } from "mongoose"
+import bcrypt from "bcrypt"
 // Declare the Schema of the Mongo model
 var itUserSchema = new Schema({
   name: {
@@ -12,11 +13,12 @@ var itUserSchema = new Schema({
     type: String,
     required: true,
     unique: true,
+    trim:true
   },
   password: {
     type: String,
     required: true,
-    unique: true,
+    
   },
   rank: {
     type: String,
@@ -27,6 +29,20 @@ var itUserSchema = new Schema({
     required: true,
   },
 });
+
+// Automatically hash password before saving //
+itUserSchema.pre("save",async() => {
+  if(!this.isModified("password")) return;
+
+  const salt = await bcrypt.genSalt(10)
+  this.password = await bcrypt.hash(this.password,salt)
+})
+
+// Compare password during login
+
+itUserSchema.methods.comparePassword = async(enterPassword) => {
+  return await bcrypt.compare(enterPassword,this.password)
+}
 
 //Export the model
 

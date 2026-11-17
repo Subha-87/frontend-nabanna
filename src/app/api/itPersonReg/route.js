@@ -61,24 +61,25 @@ import bcrypt from "bcrypt";
 
 export async function POST(request) {
   try {
+    console.log("Regestration Request Accepted")
     const payload = await request.json();
     const { name, username, rank, password, domain } = payload;
 
     await connectDB();
 
     // Hash password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    //const salt = await bcrypt.genSalt(10);
+    //const hashedPassword = await bcrypt.hash(password, salt);
 
     const newItPersonInfo = {
       name,
       username,
       rank,
-      password: hashedPassword,
+      password,
       domain,
     };
 
-    const db_result = await ItPerson.insertOne(newItPersonInfo);
+    await ItPerson.insertOne(newItPersonInfo);
 
     return NextResponse.json(
       {
