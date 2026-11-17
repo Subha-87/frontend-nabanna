@@ -2,7 +2,7 @@
 import { Schema, model, mongoose } from "mongoose"
 import bcrypt from "bcrypt"
 // Declare the Schema of the Mongo model
-var itUserSchema = new Schema({
+const itUserSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -31,21 +31,22 @@ var itUserSchema = new Schema({
 });
 
 // Automatically hash password before saving //
-itUserSchema.pre("save",async() => {
-  if(!this.isModified("password")) return;
+// Hash password before saving
+itUserSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
 
-  const salt = await bcrypt.genSalt(10)
-  this.password = await bcrypt.hash(this.password,salt)
-})
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
 
 // Compare password during login
-
-itUserSchema.methods.comparePassword = async(enterPassword) => {
-  return await bcrypt.compare(enterPassword,this.password)
-}
+itUserSchema.methods.comparePassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
 
 //Export the model
 
 const ItPerson = mongoose.models.it_person || model("it_person", itUserSchema);
 
-module.exports = ItPerson;
+//module.exports = ItPerson;
+export default ItPerson

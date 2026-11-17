@@ -83,7 +83,7 @@ export async function POST(request) {
 
     return NextResponse.json(
       {
-        msg: "IT Person Registration Successful",
+        message: "IT Person Registration Successful",
         success: true,
       },
       { status: 201 }
