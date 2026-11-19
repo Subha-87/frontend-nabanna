@@ -1,0 +1,262 @@
+/* ================= Page layout ================= */
+
+.adm-page {
+  --adm-primary: #1b3c53;
+  --adm-accent: #2563eb;
+  --adm-accent-2: #06b6d4;
+  --adm-muted: #6b7280;
+
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #eef3f9;
+}
+
+/* ================= Image section (70%) ================= */
+
+/* ================= Image section (70%) ================= */
+
+.adm-cover {
+  position: relative;
+  flex: 0 0 70%;
+  width: 70%;
+  overflow: hidden;
+  background: #0a2a6b; /* fallback matching the image's deep blue */
+}
+
+/* Blurred copy fills any empty space */
+.adm-cover-bg {
+  object-fit: cover;
+  filter: blur(28px) brightness(0.75) saturate(1.2);
+  transform: scale(1.15); /* hides blur edges */
+}
+
+/* Main image: fully visible, no cropping */
+.adm-cover-img {
+  object-fit: contain;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Remove the old overlay and zoom: they are no longer needed */
+.adm-cover::after {
+  display: none;
+}
+/* ================= Login section (30%) ================= */
+
+.adm-login-section {
+  position: relative;
+  flex: 0 0 30%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 24px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #e8f1ff 0%, #f7fafc 50%, #e6fbff 100%);
+}
+
+/* Soft decorative blobs behind the card */
+.adm-login-section::before,
+.adm-login-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.55;
+  z-index: 0;
+  animation: admFloat 10s ease-in-out infinite alternate;
+}
+
+.adm-login-section::before {
+  width: 260px;
+  height: 260px;
+  top: -80px;
+  right: -80px;
+  background: var(--adm-accent);
+}
+
+.adm-login-section::after {
+  width: 220px;
+  height: 220px;
+  bottom: -70px;
+  left: -70px;
+  background: var(--adm-accent-2);
+  animation-delay: 2s;
+}
+
+@keyframes admFloat {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(20px, -20px);
+  }
+}
+
+/* ================= Login card ================= */
+
+.adm-login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 380px;
+  padding: 36px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  box-shadow:
+    0 20px 50px rgba(27, 60, 83, 0.15),
+    0 2px 6px rgba(27, 60, 83, 0.06);
+  overflow: hidden;
+
+  animation: admFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Gradient accent bar on top */
+.adm-login-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--adm-accent), var(--adm-accent-2));
+}
+
+/* Hover lift effect */
+.adm-login-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 70px rgba(27, 60, 83, 0.22),
+    0 4px 10px rgba(27, 60, 83, 0.08);
+}
+
+@keyframes admFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= Logo, title, text ================= */
+
+.adm-logo {
+  width: 84px;
+  height: auto;
+  margin-bottom: -14px;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+  animation: admPop 0.8s ease 0.2s both;
+}
+
+@keyframes admPop {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.adm-title {
+  margin: 0 0 6px;
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--adm-primary);
+}
+
+.adm-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--adm-muted);
+}
+
+.adm-divider {
+  width: 56px;
+  height: 3px;
+  margin: 16px auto 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--adm-accent), var(--adm-accent-2));
+}
+
+.adm-footer {
+  margin: 22px 0 0;
+  padding-top: 14px;
+  width: 100%;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.75rem;
+  color: var(--adm-muted);
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 1200px) {
+  .adm-cover {
+    flex-basis: 60%;
+    width: 60%;
+  }
+  .adm-login-section {
+    flex-basis: 40%;
+    width: 40%;
+  }
+}
+
+/* Tablet & mobile: hide the image, full-width login */
+@media (max-width: 992px) {
+  .adm-page {
+    flex-direction: column;
+  }
+  .adm-cover {
+    display: none;
+  }
+  .adm-login-section {
+    flex: 1;
+    width: 100%;
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .adm-login-card {
+    padding: 28px 20px 22px;
+    border-radius: 14px;
+  }
+  .adm-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .adm-login-card,
+  .adm-logo,
+  .adm-cover-img,
+  .adm-login-section::before,
+  .adm-login-section::after {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Optional: image on the RIGHT instead of left.
+   Use: <main className="adm-page adm-page-reverse"> */
+.adm-page-reverse {
+  flex-direction: row-reverse;
+}

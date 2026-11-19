@@ -1,45 +1,59 @@
 import Image from "next/image";
-//import login from "../../../../public/login.jpg";
-//import coverImg from "../../../../public/LoginImage/abstract_low_poly_techno_design_background_1905.jpg";
-import coverImg from "../../../../public/LoginImage/Cross-platform development in action.png"
-
-//import AshokStamva from "../../../../public/LogoImage/ChatGPT Image May 12, 2026, 05_06_07 PM.png"
 import { Suspense } from "react";
 import AdminLogin from "./AdminLogin";
-import loginStyle from "./page.module.css";
+import coverImg from "../../../../public/backgroundImg/it.png";
+import "./adminPage.css";
 
 export default async function Page() {
   return (
-    <div className={loginStyle.loginPage}>
-      {/* Left Cover Image */}
-      <div className={loginStyle.loginCover}>
-        <Image src={coverImg} alt="Login Cover" fill className={loginStyle.coverImg} />
-      </div>
+    <main className="adm-page">
+      {/* Image section (70%) */}
+      <section className="adm-cover">
+        {/* Blurred background fill (hides empty space) */}
+        <Image
+          src={coverImg}
+          alt=""
+          fill
+          priority
+          sizes="70vw"
+          aria-hidden="true"
+          className="adm-cover-bg"
+        />
+        <Image
+          src={coverImg}
+          alt="IT Division Work Management Portal"
+          fill
+          priority
+          sizes="(max-width: 992px) 0px, 70vw"
+          className="adm-cover-img"
+        />
+      </section>
 
-      {/* Right Login Section */}
-      <div className={loginStyle.loginSection}>
-        <div className={loginStyle.loginCard}>
-          {/* Logo */}
-          <div className={loginStyle.loginLogo}>
-            <Image
-              src="/LogoImage/ChatGPT%20Image%20May%2012%2C%202026%2C%2005_06_07%20PM.png"
-              alt="Govt Logo"
-              height={100}
-              width={90}
-              unoptimized
-              style={{marginBottom:-35}}
-            />
-          </div>
+      {/* Login section (30%) */}
+      <section className="adm-login-section">
+        <div className="adm-login-card">
+          <Image
+            src="/LogoImage/ChatGPT%20Image%20May%2012%2C%202026%2C%2005_06_07%20PM.png"
+            alt="Govt Logo"
+            height={100}
+            width={90}
+            unoptimized
+            className="adm-logo"
+          />
 
-          {/* Title */}
-          <h2 className={loginStyle.loginTitle}>PWD IT Admin Portal</h2>
+          <h2 className="adm-title">PWD IT Admin Portal</h2>
+          <p className="adm-subtitle">Sign in to continue</p>
+          <div className="adm-divider" />
 
-          {/* Login Form */}
           <Suspense fallback={null}>
             <AdminLogin />
           </Suspense>
+
+          <p className="adm-footer">
+            © PWD IT Division · Authorized access only
+          </p>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
